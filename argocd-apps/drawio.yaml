@@ -22,6 +22,10 @@ spec:
     name: in-cluster
     namespace: drawio
   syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
     syncOptions:
       - PrunePropagationPolicy=foreground
       - Replace=false
