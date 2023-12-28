@@ -20,7 +20,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - containerPort: 8080
   strategy:
     canary:
       steps:
