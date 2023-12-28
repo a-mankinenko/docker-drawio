@@ -16,11 +16,12 @@ spec:
         app: {{ include "drawio.name" . }}
     spec:
       containers:
-      - name: rollout
+      - name: {{ include "drawio.name" . }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+          protocol: TCP
   strategy:
     canary:
       steps:
