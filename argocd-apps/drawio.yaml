@@ -17,7 +17,7 @@ spec:
         - name: image.repository
           value: amankinenko/docker-drawio
         - name: image.tag
-          value: fd9628f
+          value: df9e7e5
   destination:
     name: in-cluster
     namespace: drawio
