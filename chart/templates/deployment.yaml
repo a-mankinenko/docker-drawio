@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "drawio.fullname" . }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "drawio.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "drawio.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: PUBLIC_DNS
+              value: "{{ .Values.environment.PUBLIC_DNS }}"
+            - name: ORGANISATION_UNIT
+              value: "{{ .Values.environment.ORGANISATION_UNIT }}"
+            - name: ORGANISATION
+              value: "{{ .Values.environment.ORGANISATION }}"
+            - name: CITY
+              value: "{{ .Values.environment.CITY }}"
+            - name: STATE
+              value: "{{ .Values.environment.STATE }}"
+            - name: COUNTRY_CODE
+              value: "{{ .Values.environment.COUNTRY_CODE }}"
