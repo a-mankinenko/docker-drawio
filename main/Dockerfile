@@ -48,7 +48,6 @@ RUN mkdir -p $CATALINA_HOME/webapps/draw && \
         -s '/Server/Service/Engine/Host/Context[@path="/"]' -t 'elem' -n 'WatchedResource' -v 'WEB-INF/web.xml' \
         conf/server.xml
 
-# Copy docker-entrypoint
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 # Add a tomcat user
