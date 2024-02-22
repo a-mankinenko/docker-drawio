@@ -4,6 +4,8 @@ metadata:
   name: drawio
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
+  annotations:
+    codefresh.io/product: padloc
 spec:
   project: default
   source:
