@@ -53,7 +53,7 @@ If you're running `Docker Toolbox` then start a web browser session to <http://1
 * **KEYSTORE_PASS**: ".keystore"/.jks" store password; default `V3ry1nS3cur3P4ssw0rd`
 * **KEY_PASS**: Private key password; default `<ref:KEYSTORE_PASS>`
 
-## HTTPS SSL Certificate via Let's Encrypt
+## HTTPS SSL Certificate via Let's Encrypt.
 
 ### Prerequisites:
 
